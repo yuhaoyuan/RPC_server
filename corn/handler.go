@@ -7,6 +7,10 @@ import (
 
 func UserLogin(name string, pwd string) (proto.User, error) {
 	log.Printf("user-login!")
+
+	// 先检查redis里面是否存在此用户
+
+
 	return proto.User{
 		Name: name,
 		NickName: "ttt",
