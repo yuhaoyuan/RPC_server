@@ -1,10 +1,11 @@
-package cmd
+package corn
 
 import (
 	"bytes"
 	"encoding/binary"
 	"encoding/gob"
 	"io"
+	"log"
 	"net"
 )
 
@@ -31,7 +32,7 @@ func decode(bs []byte) (ProtoData, error) {
 	buf := bytes.NewBuffer(bs)
 	decoder := gob.NewDecoder(buf)
 	var data ProtoData
-	err := decoder.Decode(data)
+	err := decoder.Decode(&data)     // 非指针的话-报错：err=gob: attempt to decode into a non-pointer
 	if err != nil {
 		return ProtoData{}, err
 	}
@@ -54,7 +55,7 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 	}
 	buf := make([]byte, 4+len(b))
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
-	copy(b[4:], b)                                      // set body
+	copy(buf[4:], b)                                      // set body
 	_, err = t.conn.Write(buf)
 	return err
 }
@@ -72,5 +73,10 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 		return ProtoData{}, err
 	}
 	rsp, err := decode(data)
+
+	log.Printf("receive------rsp----------")
+	log.Println(rsp)
+	log.Printf("--------------\n\n")
+
 	return rsp, err
 }

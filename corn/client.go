@@ -1,4 +1,4 @@
-package cmd
+package corn
 
 import (
 	"net"
@@ -8,7 +8,6 @@ import (
 type Client struct {
 	conn net.Conn
 }
-
 
 func NewClient(conn net.Conn) *Client {
 	return &Client{conn}
@@ -33,16 +32,16 @@ func (t *Client) Call(name string, funcPointer interface{}){
 		})
 		if err != nil{
 			// 处理err
-			return nil
+			return handleError(container, err)
 		}
 
 		// recieve
 		rsp, err := clientTransport.Receive()
 		if err != nil {
-			return nil
+			return handleError(container, err)
 		}
 		if rsp.Err != ""{
-			return nil
+			return handleError(container, err)
 		}
 
 		// if rsp.Args == []
@@ -63,4 +62,13 @@ func (t *Client) Call(name string, funcPointer interface{}){
 	}
 
 	container.Set(reflect.MakeFunc(container.Type(), f))
+}
+
+func handleError(container reflect.Value, err error) []reflect.Value {
+	outArgs := make([]reflect.Value, container.Type().NumOut())
+	for i := 0; i < len(outArgs)-1; i++ {
+		outArgs[i] = reflect.Zero(container.Type().Out(i))
+	}
+	outArgs[len(outArgs)-1] = reflect.ValueOf(&err).Elem()
+	return outArgs
 }

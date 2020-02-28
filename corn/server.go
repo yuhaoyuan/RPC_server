@@ -1,4 +1,4 @@
-package cmd
+package corn
 
 import (
 	"fmt"
@@ -40,7 +40,7 @@ func (t *Server) Run() {
 				req, err := transporter.Receive()
 				if err != nil {
 					if err != io.EOF {
-						log.Printf("Receive failed!")
+						log.Printf(fmt.Sprintf("Receive failed! err=%s", err))
 						return
 					}
 				}
@@ -63,7 +63,7 @@ func (t *Server) Run() {
 				// 获得函数需要的参数
 				fArgs := make([]reflect.Value, len(req.Args))
 				for i := range req.Args {
-					fArgs[i] = reflect.ValueOf(i)
+					fArgs[i] = reflect.ValueOf(req.Args[i])
 				}
 
 				// 默认f必然是函数
@@ -74,12 +74,17 @@ func (t *Server) Run() {
 					RspInfo[i] = funcRsp[i].Interface()
 				}
 				var RspErr string
-				rerr, ok := funcRsp[len(funcRsp)-1].Interface().(error)
+				rErr, ok := funcRsp[len(funcRsp)-1].Interface().(error)
 				if !ok {
 					RspErr = ""
 				} else {
-					RspErr = rerr.Error()
+					RspErr = rErr.Error()
 				}
+
+				log.Println("RspInfo= -----------------")
+				log.Println(RspInfo)
+				log.Println(RspErr)
+				log.Println("----------------------")
 
 				// send rsp to client
 				err = transporter.Send(ProtoData{
@@ -88,7 +93,7 @@ func (t *Server) Run() {
 					Err: RspErr,
 				})
 				if err != nil {
-					log.Println("transporter---Send failed")
+					log.Println(fmt.Sprintf("transporter---Send failed, err = %s", err))
 				}
 			}
 		}()
