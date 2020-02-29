@@ -19,7 +19,7 @@ func BaseConfInit(){
 	BaseConf.Addr = os.Getenv("ADDR")
 	BaseConf.RedisAddr = os.Getenv("RedisAddr")
 	BaseConf.DbAddr = os.Getenv("DbAddr")
-	BaseConf.DbAddr = os.Getenv("DbUser")
-	BaseConf.DbAddr = os.Getenv("DbPwd")
+	BaseConf.DbUser = os.Getenv("DbUser")
+	BaseConf.DbPwd = os.Getenv("DbPwd")
 	BaseConf.DbDatabase = os.Getenv("DbDatabase")
 }

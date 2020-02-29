@@ -21,13 +21,35 @@ func TestDb(t *testing.T) {
 	}
 
 	// insert
-	inserSql := "insert into user_info set name='test001', nick_name='哈苏滴孩奴'"
+
+	//file, err := os.Open("/Users/yuhaoyuan/Downloads/kelason.jpg")
+	//if err != nil {
+	//	fmt.Println(err)
+	//}
+	//defer file.Close()
+	//
+	//stats, statsErr := file.Stat()
+	//if statsErr != nil || stats ==nil{
+	//	fmt.Println(statsErr)
+	//}
+	//
+	//var size int64 = stats.Size()
+	//imgBytes := make([]byte, size)
+	//
+	//bufr := bufio.NewReader(file)
+	//_,err = bufr.Read(imgBytes)
+	//if err != nil {
+	//	fmt.Printf("error: %v\n", err)
+	//}
+
+
+	inserSql := "insert into user_info set user_name='test001', nick_name='哈苏滴孩奴', picture=''"
 	_, err = db.Exec(inserSql) // OK
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	inserSql2 := "insert into user_info set name='test002', nick_name='🌶️🔟🤨🐂🍺'"
+	inserSql2 := "insert into user_info set user_name='test002', nick_name='🌶️🔟🤨🐂🍺'"
 	_, err = db.Exec(inserSql2) // OK
 
 	if err != nil {

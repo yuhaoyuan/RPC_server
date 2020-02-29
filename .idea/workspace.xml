@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c628c168-95ad-42cd-a67e-74724faca83f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/corn/handler_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dal/cacher_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corn/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/cacher.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/cacher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dal/db_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/db_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env" beforeDir="false" afterPath="$PROJECT_DIR$/env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/request.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dal/db.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+            <state relative-caret-position="180">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
               <folding>
                 <element signature="e#13#141#0" expanded="true" />
               </folding>
@@ -38,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dal/db_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="34" column="5" selection-start-line="29" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="240">
+              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
                 <element signature="e#13#100#0" expanded="true" />
               </folding>
@@ -47,41 +40,47 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proto/request.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/image/geom.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/image/draw/draw.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/go/src/database/sql/sql.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="335" column="4" selection-start-line="335" selection-start-column="4" selection-end-line="335" selection-end-column="4" />
+            <state relative-caret-position="173">
+              <caret line="1437" column="14" selection-start-line="1437" selection-start-column="14" selection-end-line="1437" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/go/pkg/mod/github.com/go-sql-driver/mysql@v1.5.0/driver_test.go">
+        <entry file="file:///usr/local/go/src/image/png/reader.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="1036" column="24" selection-start-line="1036" selection-start-column="24" selection-end-line="1036" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dal/cacher.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/corn/handler.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="88" column="46" lean-forward="true" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="46" />
-              <folding>
-                <element signature="e#14#80#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="951" column="5" selection-start-line="951" selection-start-column="5" selection-end-line="951" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -89,19 +88,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="14" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corn/handler_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="315">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding>
-                <element signature="e#14#116#0" expanded="true" />
+                <element signature="e#14#210#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="75">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -119,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/config.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state relative-caret-position="195">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -147,6 +137,9 @@
       <find>userInfo</find>
       <find>newe</find>
       <find>do</find>
+      <find>sql-db ping error</find>
+      <find>for</find>
+      <find>picture</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -171,25 +164,25 @@
         <option value="$PROJECT_DIR$/cmd/handler.go" />
         <option value="$PROJECT_DIR$/server/server.go" />
         <option value="$PROJECT_DIR$/bussines/server.go" />
-        <option value="$PROJECT_DIR$/proto/request.go" />
         <option value="$PROJECT_DIR$/corn/customdata.go" />
         <option value="$PROJECT_DIR$/corn/server.go" />
         <option value="$PROJECT_DIR$/cmd/client/client.go" />
         <option value="$PROJECT_DIR$/corn/client.go" />
-        <option value="$PROJECT_DIR$/config/config.go" />
         <option value="$PROJECT_DIR$/env" />
         <option value="$PROJECT_DIR$/dal/cacher_test.go" />
         <option value="$PROJECT_DIR$/dal/model.go" />
-        <option value="$PROJECT_DIR$/dal/db_test.go" />
         <option value="$PROJECT_DIR$/dal/cacher.go" />
-        <option value="$PROJECT_DIR$/cmd/server/server.go" />
         <option value="$PROJECT_DIR$/corn/handler_test.go" />
         <option value="$PROJECT_DIR$/dal/db.go" />
         <option value="$PROJECT_DIR$/corn/handler.go" />
+        <option value="$PROJECT_DIR$/config/config.go" />
+        <option value="$PROJECT_DIR$/cmd/server/server.go" />
+        <option value="$PROJECT_DIR$/dal/db_test.go" />
+        <option value="$PROJECT_DIR$/proto/request.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1001" />
@@ -284,7 +277,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn">
+  <component name="RunManager" selected="Go Build.go build server.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="RPC_server" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -295,15 +288,21 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestCacher in github.com/yuhaoyuan/RPC_server/dal" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="RPC_server" />
-      <working_directory value="$PROJECT_DIR$/dal" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/yuhaoyuan/RPC_server/dal" />
+      <working_directory value="$PROJECT_DIR$" />
+      <envs>
+        <env name="ADDR" value="127.0.0.1:8009" />
+        <env name="RedisAddr" value="127.0.0.1:6379" />
+        <env name="DbAddr" value="127.0.0.1:3306" />
+        <env name="DbDatabase" value="yhy" />
+        <env name="DbUser" value="root" />
+        <env name="DbPwd" value="12345678" />
+      </envs>
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/cmd/server/server.go" />
+      <package value="github.com/yuhaoyuan/RPC_server" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestCacher$" />
       <method v="2" />
     </configuration>
     <configuration name="TestDb in github.com/yuhaoyuan/RPC_server/dal" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -362,52 +361,52 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestDb in github.com/yuhaoyuan/RPC_server/dal" />
-      <item itemvalue="Go Test.TestCacher in github.com/yuhaoyuan/RPC_server/dal" />
+      <item itemvalue="Go Build.go build server.go" />
       <item itemvalue="Go Test.TestUserRegister in github.com/yuhaoyuan/RPC_server/corn" />
       <item itemvalue="Go Test.TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" />
       <item itemvalue="Go Test.TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" />
+      <item itemvalue="Go Test.TestDb in github.com/yuhaoyuan/RPC_server/dal" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build server.go" />
+        <item itemvalue="Go Test.TestDb in github.com/yuhaoyuan/RPC_server/dal" />
         <item itemvalue="Go Test.TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" />
         <item itemvalue="Go Test.TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" />
         <item itemvalue="Go Test.TestUserRegister in github.com/yuhaoyuan/RPC_server/corn" />
-        <item itemvalue="Go Test.TestCacher in github.com/yuhaoyuan/RPC_server/dal" />
-        <item itemvalue="Go Test.TestDb in github.com/yuhaoyuan/RPC_server/dal" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestUserRegister_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 03m 26s.xml">
-      <configuration name="TestUserRegister in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserRegister_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 04m 28s.xml">
-      <configuration name="TestUserRegister in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserRegister_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 05m 04s.xml">
-      <configuration name="TestUserRegister in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserRegister_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 06m 07s.xml">
-      <configuration name="TestUserRegister in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserLogin_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 08m 22s.xml">
-      <configuration name="TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserLogin_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 09m 57s.xml">
-      <configuration name="TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserLogin_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 10m 49s.xml">
-      <configuration name="TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestUserModifyInfo_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 19m 06s.xml">
-      <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestUserModifyInfo_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 19m 51s.xml">
       <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="TestUserModifyInfo_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 23m 51s.xml">
       <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestUserModifyInfo_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 24m 39s.xml">
+      <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestUserModifyInfo_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 25m 03s.xml">
+      <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestUserModifyInfo_in_github_com_yuhaoyuan_RPC_server_corn - 2020.02.29 at 16h 25m 28s.xml">
+      <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDb_in_github_com_yuhaoyuan_RPC_server_dal - 2020.02.29 at 21h 36m 40s.xml">
+      <configuration name="TestDb in github.com/yuhaoyuan/RPC_server/dal" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDb_in_github_com_yuhaoyuan_RPC_server_dal - 2020.02.29 at 21h 41m 57s.xml">
+      <configuration name="TestDb in github.com/yuhaoyuan/RPC_server/dal" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDb_in_github_com_yuhaoyuan_RPC_server_dal - 2020.02.29 at 21h 44m 09s.xml">
+      <configuration name="TestDb in github.com/yuhaoyuan/RPC_server/dal" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDb_in_github_com_yuhaoyuan_RPC_server_dal - 2020.02.29 at 21h 44m 29s.xml">
+      <configuration name="TestDb in github.com/yuhaoyuan/RPC_server/dal" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDb_in_github_com_yuhaoyuan_RPC_server_dal - 2020.02.29 at 21h 51m 23s.xml">
+      <configuration name="TestDb in github.com/yuhaoyuan/RPC_server/dal" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -420,16 +419,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1001" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1001" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32673267" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39933994" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32673267" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32893288" />
@@ -496,13 +495,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dal/db_test.go</url>
-          <line>37</line>
+          <line>59</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/dal/db_test.go</url>
-          <line>29</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dal/cacher_test.go</url>
@@ -569,9 +563,24 @@
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/dal/db_test.go</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/dal/db_test.go</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="config.BaseConf" language="go" />
+      </configuration>
       <configuration name="GoTestRunConfiguration">
         <watch expression="config.BaseConf" language="go" />
       </configuration>
@@ -580,17 +589,17 @@
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
+        <expression-string>config.BaseConf</expression-string>
+        <language-id>go</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>dal.SqlDb</expression-string>
         <language-id>go</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
         <expression-string>dal.RedisDb</expression-string>
-        <language-id>go</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>config.BaseConf</expression-string>
         <language-id>go</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -678,13 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proto/request.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -848,37 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/server/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dal/db_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="34" column="5" selection-start-line="29" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#13#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/go/pkg/mod/github.com/go-sql-driver/mysql@v1.5.0/driver_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -886,16 +857,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/go/src/database/sql/sql.go">
+    <entry file="file://$PROJECT_DIR$/dal/cacher.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="335" column="4" selection-start-line="335" selection-start-column="4" selection-end-line="335" selection-end-column="4" />
+        <state relative-caret-position="391">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/corn/handler_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
+        <state relative-caret-position="319">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
           <folding>
             <element signature="e#14#116#0" expanded="true" />
@@ -903,30 +874,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dal/cacher.go">
+    <entry file="file://$PROJECT_DIR$/corn/handler.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="-440">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dal/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        <state relative-caret-position="180">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding>
             <element signature="e#13#141#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/corn/handler.go">
+    <entry file="file://$PROJECT_DIR$/env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="88" column="46" lean-forward="true" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="46" />
+        <state relative-caret-position="75">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/image/png/reader.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="951" column="5" selection-start-line="951" selection-start-column="5" selection-end-line="951" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/image/geom.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/image/draw/draw.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/database/sql/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="1437" column="14" selection-start-line="1437" selection-start-column="14" selection-end-line="1437" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/server/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding>
-            <element signature="e#14#80#0" expanded="true" />
+            <element signature="e#14#210#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/db_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#13#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proto/request.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
