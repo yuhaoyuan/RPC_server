@@ -8,13 +8,6 @@ import (
 	"testing"
 )
 
-type userInfo struct {
-	Name     string `json:"name"`
-	Pwd      string `json:"pwd"`
-	NickName string `json:"nick_name"`
-	Picture  string `json:"picture"`
-}
-
 func TestDb(t *testing.T) {
 	db, err := sql.Open("mysql", "root:12345678@(127.0.0.1:3306)/yhy")
 
@@ -45,7 +38,7 @@ func TestDb(t *testing.T) {
 	rows, err := db.Query("select user_name, pwd, nick_name, picture from user_info")
 	defer rows.Close()
 	for rows.Next() {
-		info := userInfo{}
+		info := UserInfo{}
 		err := rows.Scan(&info.Name, &info.Pwd, &info.NickName, &info.Picture)
 		if err != nil {
 			log.Fatal(err)

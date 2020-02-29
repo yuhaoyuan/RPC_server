@@ -1,6 +1,6 @@
 export ADDR=127.0.0.1:8009
 export RedisAddr=127.0.0.1:6379
-export DbAddr=127.0.0.1:6379
+export DbAddr=127.0.0.1:3306
 export DbDatabase=yhy
 export DbUser=root
 export DbPwd=12345678
