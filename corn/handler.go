@@ -99,6 +99,7 @@ func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
 	tokenUserName := auth.CacherJudUserToken(token, dal.RedisDb)
 	if tokenUserName != "" && tokenUserName == userName{
 		userInfo, _ := findUserByUserName(userName)
+		userInfo.Token = token
 		return userInfo, nil
 	} else{
 		log.Println("can not find token or wrong user_name")
