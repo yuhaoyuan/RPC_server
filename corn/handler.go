@@ -3,6 +3,7 @@ package corn
 import (
 	"errors"
 	"github.com/yuhaoyuan/RPC_server/auth"
+	"github.com/yuhaoyuan/RPC_server/config"
 	"github.com/yuhaoyuan/RPC_server/dal"
 	"log"
 )
@@ -96,7 +97,9 @@ func UserModifyInfo(userName, pwd, nickName, picture string) (dal.UserInfo, erro
 
 // 校验token和userName是否正确
 func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
-	tokenUserName := auth.CacherJudUserToken(token, dal.RedisDb)
+	encodeToken, _ := auth.AesDecrypt([]byte(token), []byte(config.BaseConf.AesToken))
+
+	tokenUserName := auth.CacherJudUserToken(string(encodeToken), dal.RedisDb)
 	if tokenUserName != "" && tokenUserName == userName{
 		userInfo, _ := findUserByUserName(userName)
 		userInfo.Token = token
