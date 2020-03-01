@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"crypto/aes"
 	"crypto/cipher"
+	"encoding/hex"
 	"fmt"
 	"github.com/go-redis/redis"
-	"github.com/yuhaoyuan/RPC_server/config"
 	"log"
 	"math/rand"
 	"time"
@@ -34,17 +34,16 @@ func CacherGetToken(userName string, db *redis.Client) string {
 	// 生成token
 	rand.Seed(time.Now().Unix())
 	randomNumber := rand.Int63()
-	orginData := fmt.Sprintf("yyyhy_server_%s_%d_%d", userName, time.Now().Unix(), randomNumber)
-	cryptedToken, _ := AesEncrypt([]byte(orginData), []byte(config.BaseConf.AesToken))
+	orginData := fmt.Sprintf("yyyhyserver%s%d%d", userName, time.Now().Unix(), randomNumber)
 
-
-	rKey := fmt.Sprintf(userTokenKey, string(cryptedToken))
+	rKey := fmt.Sprintf(userTokenKey, string(orginData))
 	err := db.Set(rKey, userName, time.Minute*30).Err()
 	if err != nil {
 		log.Println("SetUserToken failed, err = ", err)
 		return ""
 	}
-	return string(cryptedToken)
+	db.Set(lastKey, orginData, time.Minute*30)
+	return string(orginData)
 }
 
 func PKCS7Padding(ciphertext []byte, blockSize int) []byte {
@@ -69,7 +68,7 @@ func AesEncrypt(origData, key []byte) ([]byte, error) {
 	blockMode := cipher.NewCBCEncrypter(block, key[:blockSize])
 	crypted := make([]byte, len(origData))
 	blockMode.CryptBlocks(crypted, origData)
-	return crypted, nil
+	return []byte(hex.EncodeToString(crypted)), nil
 }
 
 func AesDecrypt(crypted, key []byte) ([]byte, error) {
@@ -79,8 +78,9 @@ func AesDecrypt(crypted, key []byte) ([]byte, error) {
 	}
 	blockSize := block.BlockSize()
 	blockMode := cipher.NewCBCDecrypter(block, key[:blockSize])
-	origData := make([]byte, len(crypted))
-	blockMode.CryptBlocks(origData, crypted)
+	d, _ := hex.DecodeString(string(crypted))
+	origData := make([]byte, len(d))
+	blockMode.CryptBlocks(origData, d)
 	origData = PKCS7UnPadding(origData)
 	return origData, nil
 }

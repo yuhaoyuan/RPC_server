@@ -40,7 +40,9 @@ func UserLogin(userName string, pwd string) (dal.UserInfo, error) {
 		return dal.UserInfo{}, errors.New("the username does not exist")
 	} else {
 		if pwd == userInfo.Pwd {
-			userInfo.Token = auth.CacherGetToken(userName, dal.RedisDb)
+			orginData := auth.CacherGetToken(userName, dal.RedisDb)
+			cryptedToken, _ := auth.AesEncrypt([]byte(orginData), []byte(config.BaseConf.AesTokenKey))
+			userInfo.Token = string(cryptedToken)
 			return userInfo, nil
 		} else {
 			return dal.UserInfo{}, errors.New("wrong_password")
@@ -69,6 +71,10 @@ func UserRegister(userName string, pwd string) (dal.UserInfo, error) {
 	}
 	// 成功了的话，更新缓存
 	_ = dal.CacherSetUserInfo(rs, dal.RedisDb)
+
+	orginData := auth.CacherGetToken(userName, dal.RedisDb)
+	cryptedToken, _ := auth.AesEncrypt([]byte(orginData), []byte(config.BaseConf.AesTokenKey))
+	rs.Token = string(cryptedToken)
 	return rs, nil
 }
 
@@ -97,7 +103,7 @@ func UserModifyInfo(userName, pwd, nickName, picture string) (dal.UserInfo, erro
 
 // 校验token和userName是否正确
 func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
-	encodeToken, _ := auth.AesDecrypt([]byte(token), []byte(config.BaseConf.AesToken))
+	encodeToken, _ := auth.AesDecrypt([]byte(token), []byte(config.BaseConf.AesTokenKey))
 
 	tokenUserName := auth.CacherJudUserToken(string(encodeToken), dal.RedisDb)
 	if tokenUserName != "" && tokenUserName == userName{
