@@ -4,3 +4,4 @@ export DbAddr=127.0.0.1:3306
 export DbDatabase=yhy
 export DbUser=root
 export DbPwd=12345678
+export AESTOKEN=wem0Upqsl5MBD0Z3

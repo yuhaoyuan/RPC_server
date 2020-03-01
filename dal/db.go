@@ -65,7 +65,12 @@ func DbModifyUserInfo(userName, pwd, nickName, picture string, Db *sql.DB) error
 	if err := checkSqlDB(Db); err != nil {
 		return err
 	}
-	modifySql := fmt.Sprintf("update user_info set nick_name = '%s', picture = '%s' where user_name = '%s'",nickName, picture,userName)
+	modifySql := ""
+	if picture != "" {
+		modifySql = fmt.Sprintf("update user_info set nick_name = '%s', picture = '%s' where user_name = '%s'", nickName, picture, userName)
+	} else {
+		modifySql = fmt.Sprintf("update user_info set nick_name = '%s' where user_name = '%s'", nickName, userName)
+	}
 	_, err := Db.Exec(modifySql)
 	if err != nil {
 		fmt.Println(err)

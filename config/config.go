@@ -13,6 +13,7 @@ type BaseConfig struct {
 	DbUser string
 	DbPwd string
 	DbDatabase string
+	AesToken string
 }
 
 func BaseConfInit(){
@@ -22,4 +23,5 @@ func BaseConfInit(){
 	BaseConf.DbUser = os.Getenv("DbUser")
 	BaseConf.DbPwd = os.Getenv("DbPwd")
 	BaseConf.DbDatabase = os.Getenv("DbDatabase")
+	BaseConf.AesToken = os.Getenv("AESTOKEN")
 }

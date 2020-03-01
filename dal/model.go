@@ -5,4 +5,5 @@ type UserInfo struct {
 	Pwd      string `json:"pwd"`
 	NickName string `json:"nick_name"`
 	Picture  string `json:"picture"`
+	Token    string `json:"token"`
 }

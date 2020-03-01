@@ -12,7 +12,7 @@ import (
 var RedisDb *redis.Client
 
 const (
-	userInfoKey = "user_info_key_%s"
+	userInfoKey  = "user_info_key_%s"
 )
 
 func CacherInit() {
@@ -34,7 +34,7 @@ func checkCacherDB(Db *redis.Client) error {
 }
 
 func CacherGetUserInfo(userName string, db *redis.Client) (UserInfo, error) {
-	if checkErr := checkCacherDB(db); checkErr!= nil {
+	if checkErr := checkCacherDB(db); checkErr != nil {
 		return UserInfo{}, checkErr
 	}
 	rKey := fmt.Sprintf(userInfoKey, userName)
@@ -53,7 +53,7 @@ func CacherGetUserInfo(userName string, db *redis.Client) (UserInfo, error) {
 }
 
 func CacherSetUserInfo(userinfo UserInfo, db *redis.Client) error {
-	if checkErr := checkCacherDB(db); checkErr!= nil {
+	if checkErr := checkCacherDB(db); checkErr != nil {
 		return checkErr
 	}
 	rKey := fmt.Sprintf(userInfoKey, userinfo.Name)
@@ -65,6 +65,19 @@ func CacherSetUserInfo(userinfo UserInfo, db *redis.Client) error {
 	err = db.Set(rKey, userInfoString, time.Minute*30).Err()
 	if err != nil {
 		log.Printf(fmt.Sprintf("CacherSetUserInfo-Set failed!, err = %s", err))
+		return err
+	}
+	return nil
+}
+
+func CacherDelUserInfo(userName string, db *redis.Client) error {
+	if checkErr := checkCacherDB(db); checkErr != nil {
+		return checkErr
+	}
+	rKey := fmt.Sprintf(userInfoKey, userName)
+	err := db.Del(rKey).Err()
+	if err != nil {
+		log.Printf(fmt.Sprintf("CacherDelUserInfo-Set failed!, err = %s", err))
 		return err
 	}
 	return nil

@@ -2,6 +2,7 @@ package corn
 
 import (
 	"errors"
+	"github.com/yuhaoyuan/RPC_server/auth"
 	"github.com/yuhaoyuan/RPC_server/dal"
 	"log"
 )
@@ -38,6 +39,7 @@ func UserLogin(userName string, pwd string) (dal.UserInfo, error) {
 		return dal.UserInfo{}, errors.New("the username does not exist")
 	} else {
 		if pwd == userInfo.Pwd {
+			userInfo.Token = auth.CacherGetToken(userName, dal.RedisDb)
 			return userInfo, nil
 		} else {
 			return dal.UserInfo{}, errors.New("wrong_password")
@@ -88,6 +90,18 @@ func UserModifyInfo(userName, pwd, nickName, picture string) (dal.UserInfo, erro
 
 	}
 	// 更新缓存
-	_ = dal.CacherSetUserInfo(rs, dal.RedisDb)
+	_ = dal.CacherDelUserInfo(userName, dal.RedisDb)
 	return rs, nil
+}
+
+// 校验token和userName是否正确
+func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
+	tokenUserName := auth.CacherJudUserToken(token, dal.RedisDb)
+	if tokenUserName != "" && tokenUserName == userName{
+		userInfo, _ := findUserByUserName(userName)
+		return userInfo, nil
+	} else{
+		log.Println("can not find token or wrong user_name")
+		return dal.UserInfo{}, errors.New("can not find token or wrong user_name")
+	}
 }
