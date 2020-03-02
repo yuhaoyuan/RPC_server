@@ -51,12 +51,14 @@ func NewCustomAgreement(conn net.Conn) *CustomAgreement {
 func (t *CustomAgreement) Send(req ProtoData) error {
 	b, err := encode(req)
 	if err != nil {
+		log.Println("Send-encode error=", err)
 		return err
 	}
 	buf := make([]byte, 4+len(b))
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
 	copy(buf[4:], b)                                      // set body
 	_, err = t.conn.Write(buf)
+	log.Println("Send-Write error=", err)
 	return err
 }
 
@@ -64,12 +66,14 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 	header := make([]byte, 4)
 	_, err := io.ReadFull(t.conn, header) // read精准的长度
 	if err != nil {
+		log.Println("receive error=", err)
 		return ProtoData{}, err
 	}
 	dataLen := binary.BigEndian.Uint32(header)
 	data := make([]byte, dataLen)
 	_, err = io.ReadFull(t.conn, data)
 	if err != nil {
+		log.Println("receive error=", err)
 		return ProtoData{}, err
 	}
 	rsp, err := decode(data)
