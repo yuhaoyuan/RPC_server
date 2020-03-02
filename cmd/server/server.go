@@ -5,12 +5,14 @@ import (
 	"github.com/yuhaoyuan/RPC_server/config"
 	"github.com/yuhaoyuan/RPC_server/corn"
 	"github.com/yuhaoyuan/RPC_server/dal"
+	"github.com/yuhaoyuan/RPC_server/yhylog"
 )
 
 func init() {
 	config.BaseConfInit()
 	dal.CacherInit()
 	dal.DbInit()
+	yhylog.LogInit("server_log.log")
 }
 
 func main() {

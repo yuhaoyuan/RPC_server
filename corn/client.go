@@ -12,6 +12,11 @@ type Client struct {
 func NewClient(conn net.Conn) *Client {
 	return &Client{conn}
 }
+func (t *Client) Close(){
+	if t.conn !=nil {
+		_ = t.conn.Close()
+	}
+}
 
 func (t *Client) Call(name string, funcPointer interface{}){
 	container := reflect.ValueOf(funcPointer).Elem()

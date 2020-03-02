@@ -34,7 +34,7 @@ func (t *Server) Run() {
 			log.Printf("accept failed!")
 			continue
 		}
-		go func() {
+		go func() {   //  goroutine的数量 等于 同时在处理的请求数量 约等于 并发量
 			transporter := NewCustomAgreement(conn)
 			for {
 				req, err := transporter.Receive()
@@ -59,6 +59,7 @@ func (t *Server) Run() {
 					}
 					continue
 				}
+				log.Printf("rpc-api-called, name=%s", req.Name)   // 输出日志，接口名字
 
 				// 获得函数需要的参数
 				fArgs := make([]reflect.Value, len(req.Args))
@@ -84,6 +85,7 @@ func (t *Server) Run() {
 				log.Println("RspInfo= -----------------")
 				log.Println(RspInfo)
 				log.Println(RspErr)
+				log.Println("but req-args=", fArgs)
 				log.Println("----------------------")
 
 				// send rsp to client

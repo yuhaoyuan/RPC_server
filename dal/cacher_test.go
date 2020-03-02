@@ -23,5 +23,6 @@ func TestCacher(t *testing.T) {
 	err = redisDb.Set("ttttestcacher", 1, time.Minute).Err()
 	if err != nil {
 		fmt.Println(err)
+		panic(err)
 	}
 }

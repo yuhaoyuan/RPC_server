@@ -13,6 +13,7 @@ func TestDb(t *testing.T) {
 
 	if err != nil {
 		log.Fatal(err)
+		panic(err)
 	}
 	defer db.Close()
 	pingErr := db.Ping()
@@ -47,6 +48,7 @@ func TestDb(t *testing.T) {
 	_, err = db.Exec(inserSql) // OK
 	if err != nil {
 		fmt.Println(err)
+		panic(err)
 	}
 
 	inserSql2 := "insert into user_info set user_name='test002', nick_name='🌶️🔟🤨🐂🍺'"
@@ -54,6 +56,7 @@ func TestDb(t *testing.T) {
 
 	if err != nil {
 		fmt.Println(err)
+		panic(err)
 	}
 
 	// get
@@ -64,14 +67,13 @@ func TestDb(t *testing.T) {
 		err := rows.Scan(&info.Name, &info.Pwd, &info.NickName, &info.Picture)
 		if err != nil {
 			log.Fatal(err)
+			panic(err)
 		}
 		log.Println(info)
 	}
 	err = rows.Err()
 	if err != nil {
 		log.Fatal(err)
+		panic(err)
 	}
-
-	// update
-
 }

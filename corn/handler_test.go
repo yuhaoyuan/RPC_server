@@ -26,6 +26,7 @@ func TestUserRegister(t *testing.T) {
 	info, err := UserRegister("user_test1", "testpwd")
 	if err != nil {
 		fmt.Println(err)
+		panic(err)
 	}
 	fmt.Println(info)
 }
@@ -42,6 +43,7 @@ func TestUserLogin(t *testing.T) {
 	info2, err := UserLogin("user_test1", "testpwda")
 	if err != nil {
 		fmt.Println(err)
+		panic(err)
 	}
 	fmt.Println(info2)
 }
@@ -51,6 +53,7 @@ func TestUserModifyInfo(t *testing.T) {
 	info, err := UserModifyInfo("user_test1", "", "阿斯顿🌹🌹", "")
 	if err != nil {
 		fmt.Println(err)
+		panic(err)
 	}
 	fmt.Println(info)
 }

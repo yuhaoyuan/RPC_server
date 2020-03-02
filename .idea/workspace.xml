@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c628c168-95ad-42cd-a67e-74724faca83f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/auth/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/token.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/token_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/auth/token_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/insert_user_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yhylog/log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corn/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env" beforeDir="false" afterPath="$PROJECT_DIR$/env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corn/handler_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/handler_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corn/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/cacher_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/cacher_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/db_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/dal/db_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,68 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dal/db.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dal/model.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dal/cacher.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth/token.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="e#14#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/encoding/hex/hex.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/crypto/aes/cipher.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth/token_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-              <folding>
-                <element signature="e#14#61#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="77">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -88,31 +34,87 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/corn/handler.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+            <state relative-caret-position="360">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding>
-                <element signature="e#14#80#0" expanded="true" />
+                <element signature="e#14#161#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/runtime/asm_amd64.s">
+        <entry file="file://$PROJECT_DIR$/corn/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="520" selection-start-line="520" selection-end-line="520" />
+            <state relative-caret-position="416">
+              <caret line="60" column="17" lean-forward="true" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/log/log.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="300" column="5" selection-start-line="300" selection-start-column="5" selection-end-line="300" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/reflect/value.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="304" column="15" selection-start-line="304" selection-start-column="15" selection-end-line="304" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/insert_user_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="e#14#74#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/corn/handler.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/corn/handler_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yhylog/log.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#16#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server_log.log">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -126,9 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>userLogin</find>
-      <find>Receive failed</find>
-      <find>????</find>
       <find>user-log</find>
       <find>ser-logi</find>
       <find>user-</find>
@@ -145,7 +144,20 @@
       <find>yyyhy_server_</find>
       <find>yyyhy_serv</find>
       <find>Set</find>
+      <find>print</find>
       <find>PKCS7UnPadding</find>
+      <find>err</find>
+      <find>DfICQQerkO</find>
+      <find>login</find>
+      <find>Printf</find>
+      <find>log.Println</find>
+      <find>log</find>
+      <find>RspInfo</find>
+      <find>gRmEjqqVkS</find>
+      <find>CQVKaPmfqW</find>
+      <find>but</find>
+      <find>UjloPHPliq</find>
+      <find>receive------rsp----------</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -170,23 +182,27 @@
         <option value="$PROJECT_DIR$/server/server.go" />
         <option value="$PROJECT_DIR$/bussines/server.go" />
         <option value="$PROJECT_DIR$/corn/customdata.go" />
-        <option value="$PROJECT_DIR$/corn/server.go" />
         <option value="$PROJECT_DIR$/cmd/client/client.go" />
         <option value="$PROJECT_DIR$/corn/client.go" />
-        <option value="$PROJECT_DIR$/dal/cacher_test.go" />
-        <option value="$PROJECT_DIR$/corn/handler_test.go" />
-        <option value="$PROJECT_DIR$/dal/db_test.go" />
-        <option value="$PROJECT_DIR$/dal/db.go" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/cmd/server/server.go" />
         <option value="$PROJECT_DIR$/dal/cacher.go" />
         <option value="$PROJECT_DIR$/dal/model.go" />
         <option value="$PROJECT_DIR$/proto/request.go" />
         <option value="$PROJECT_DIR$/env" />
         <option value="$PROJECT_DIR$/config/config.go" />
         <option value="$PROJECT_DIR$/auth/token_test.go" />
+        <option value="$PROJECT_DIR$/corn/handler_test.go" />
+        <option value="$PROJECT_DIR$/dal/cacher_test.go" />
+        <option value="$PROJECT_DIR$/dal/db_test.go" />
+        <option value="$PROJECT_DIR$/yhylog/log.go" />
+        <option value="$PROJECT_DIR$/dal/db.go" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/util/insert_user_test.go" />
         <option value="$PROJECT_DIR$/auth/token.go" />
+        <option value="$PROJECT_DIR$/server_log" />
+        <option value="$PROJECT_DIR$/cmd/server/server.go" />
         <option value="$PROJECT_DIR$/corn/handler.go" />
+        <option value="$PROJECT_DIR$/corn/server.go" />
+        <option value="$PROJECT_DIR$/server_log.log" />
       </list>
     </option>
   </component>
@@ -248,6 +264,31 @@
               <item name="RPC_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="RPC_server" type="462c0819:PsiDirectoryNode" />
               <item name="proto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RPC_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RPC_server" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RPC_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RPC_server" type="462c0819:PsiDirectoryNode" />
+              <item name="yhylog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RPC_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="RPC_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.5" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="RPC_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.5" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -330,6 +371,26 @@
       <pattern value="^TestDb$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="RPC_server" />
+      <working_directory value="$PROJECT_DIR$/util" />
+      <envs>
+        <env name="ADDR" value="127.0.0.1:8009" />
+        <env name="RedisAddr" value="127.0.0.1:6379" />
+        <env name="DbAddr" value="127.0.0.1:3306" />
+        <env name="DbDatabase" value="yhy" />
+        <env name="DbUser" value="root" />
+        <env name="DbPwd" value="12345678" />
+        <env name="AESTOKENKEY" value="wem0Upqsl5MBD0Z3" />
+      </envs>
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/yuhaoyuan/RPC_server/util" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestInserUserInfo$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="RPC_server" />
       <working_directory value="$PROJECT_DIR$/auth" />
@@ -344,26 +405,15 @@
       <pattern value="^TestMakeToken$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRandString in github.com/yuhaoyuan/RPC_server/util" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="RPC_server" />
-      <working_directory value="$PROJECT_DIR$/corn" />
+      <working_directory value="$PROJECT_DIR$/util" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/yuhaoyuan/RPC_server/corn" />
+      <package value="github.com/yuhaoyuan/RPC_server/util" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestUserLogin$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="RPC_server" />
-      <working_directory value="$PROJECT_DIR$/corn" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/yuhaoyuan/RPC_server/corn" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestUserModifyInfo$" />
+      <pattern value="^TestRandString$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -379,51 +429,51 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build server.go" />
-      <item itemvalue="Go Test.TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" />
-      <item itemvalue="Go Test.TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" />
       <item itemvalue="Go Test.TestDb in github.com/yuhaoyuan/RPC_server/dal" />
       <item itemvalue="Go Test.TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" />
+      <item itemvalue="Go Test.TestRandString in github.com/yuhaoyuan/RPC_server/util" />
+      <item itemvalue="Go Test.TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build server.go" />
+        <item itemvalue="Go Test.TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" />
+        <item itemvalue="Go Test.TestRandString in github.com/yuhaoyuan/RPC_server/util" />
         <item itemvalue="Go Test.TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" />
         <item itemvalue="Go Test.TestDb in github.com/yuhaoyuan/RPC_server/dal" />
-        <item itemvalue="Go Test.TestUserModifyInfo in github.com/yuhaoyuan/RPC_server/corn" />
-        <item itemvalue="Go Test.TestUserLogin in github.com/yuhaoyuan/RPC_server/corn" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 43m 27s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInserUserInfo_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 09m 03s.xml">
+      <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 43m 39s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInserUserInfo_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 11m 38s.xml">
+      <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 45m 55s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInserUserInfo_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 13m 56s.xml">
+      <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 46m 07s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInserUserInfo_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 14m 09s.xml">
+      <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 47m 46s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInserUserInfo_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 15m 04s.xml">
+      <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 47m 52s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestRandString_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 15m 39s.xml">
+      <configuration name="TestRandString in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 49m 29s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestRandString_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 15m 48s.xml">
+      <configuration name="TestRandString in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 49m 40s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestRandString_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 15m 53s.xml">
+      <configuration name="TestRandString in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 49m 42s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestRandString_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 00h 16m 26s.xml">
+      <configuration name="TestRandString in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestMakeToken_in_github_com_yuhaoyuan_RPC_server_auth - 2020.03.01 at 17h 49m 51s.xml">
-      <configuration name="TestMakeToken in github.com/yuhaoyuan/RPC_server/auth" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestInserUserInfo_in_github_com_yuhaoyuan_RPC_server_util - 2020.03.02 at 01h 23m 26s.xml">
+      <configuration name="TestInserUserInfo in github.com/yuhaoyuan/RPC_server/util" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -436,23 +486,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1001" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32673267" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39933994" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32929516" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3270925" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39867842" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32893288" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946752" weight="0.32893288" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32819384" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946752" weight="0.32819384" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5005325" side_tool="true" weight="0.32893288" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -507,7 +557,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dal/db_test.go</url>
-          <line>59</line>
+          <line>62</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
@@ -523,7 +573,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/corn/handler.go</url>
-          <line>53</line>
+          <line>54</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -553,19 +603,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/corn/handler_test.go</url>
-          <line>33</line>
+          <line>34</line>
           <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/corn/handler.go</url>
-          <line>81</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/corn/handler_test.go</url>
-          <line>50</line>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
@@ -577,19 +627,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dal/db_test.go</url>
-          <line>24</line>
+          <line>25</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dal/db_test.go</url>
-          <line>45</line>
+          <line>46</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/corn/handler.go</url>
-          <line>105</line>
+          <line>114</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
@@ -610,6 +660,12 @@
           <line>19</line>
           <properties />
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/util/insert_user_test.go</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -652,69 +708,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/go/src/reflect/makefunc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go/src/reflect/asm_amd64.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go/src/reflect/value.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="376" selection-start-line="376" selection-end-line="376" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/client/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding>
-            <element signature="e#13#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/os/env.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="100" column="5" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go/src/log/log.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="311" column="5" selection-start-line="311" selection-start-column="5" selection-end-line="311" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -777,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/go/src/builtin/builtin.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="261" column="7" selection-start-line="261" selection-start-column="7" selection-end-line="261" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/errors/errors.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -795,16 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="1036" column="24" selection-start-line="1036" selection-start-column="24" selection-end-line="1036" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/handler_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#14#116#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,16 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dal/db_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#13#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proto/base.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -860,23 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dal/cacher_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/go/pkg/mod/github.com/go-redis/redis@v6.15.7+incompatible/commands.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -888,13 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="573" column="22" selection-start-line="573" selection-start-column="22" selection-end-line="573" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go/src/math/rand/rand.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="298" column="8" selection-start-line="298" selection-start-column="8" selection-end-line="298" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -933,34 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/customdata.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/crypto/aes/cipher.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/token_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="e#14#61#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,13 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/server/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/runtime/asm_amd64.s">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -985,10 +900,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dal/db.go">
+    <entry file="file://$PROJECT_DIR$/auth/token_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+        <state relative-caret-position="405">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <element signature="e#14#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/cacher_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -999,32 +924,155 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/go/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="232" column="5" selection-start-line="232" selection-start-column="5" selection-end-line="232" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/db_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+          <folding>
+            <element signature="e#13#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dal/cacher.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="791">
+          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="78" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/math/rand/rand.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auth/token.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="178">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#14#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/corn/handler.go">
+    <entry file="file://$PROJECT_DIR$/server_log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/customdata.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+        <state relative-caret-position="90">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/log/log.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="300" column="5" selection-start-line="300" selection-start-column="5" selection-end-line="300" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/db.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/reflect/value.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="304" column="15" selection-start-line="304" selection-start-column="15" selection-end-line="304" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/server/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
-            <element signature="e#14#80#0" expanded="true" />
+            <element signature="e#14#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yhylog/log.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#16#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/handler_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/insert_user_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#14#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="60" column="17" lean-forward="true" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_log.log">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

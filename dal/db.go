@@ -55,7 +55,7 @@ func DbInsertUserInfo(userName, pwd string, Db *sql.DB) error {
 	inserSql := fmt.Sprintf("insert into user_info set user_name='%s', pwd='%s', nick_name=''", userName, pwd)
 	_, err := Db.Exec(inserSql)
 	if err != nil {
-		fmt.Println(err)
+		log.Println("DbInsertUserInfo, inserSql-error, err = ", err)
 		return err
 	}
 	return nil
@@ -73,7 +73,7 @@ func DbModifyUserInfo(userName, pwd, nickName, picture string, Db *sql.DB) error
 	}
 	_, err := Db.Exec(modifySql)
 	if err != nil {
-		fmt.Println(err)
+		log.Println("DbModifyUserInfo, modifySql-error, err = ", err)
 		return err
 	}
 	return nil
