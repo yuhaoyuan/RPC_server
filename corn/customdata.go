@@ -39,7 +39,7 @@ func decode(bs []byte) (ProtoData, error) {
 	return data, err
 }
 
-// 自定义协议  ：header(固定长度=4) + body(变长)
+// codec 部分  ：header(固定长度=4) + body(变长)
 type CustomAgreement struct {
 	conn net.Conn
 }
@@ -57,7 +57,7 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 	buf := make([]byte, 4+len(b))
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
 	copy(buf[4:], b)                                      // set body
-	_, err = t.conn.Write(buf)
+	_, err = t.conn.Write(buf)      // 这个并发写操作是否安全呢？？？？ 不安全的话意味着客户端同时处理一个请求
 	if err != nil {
 		log.Println("Send-Write error=", err)
 	}

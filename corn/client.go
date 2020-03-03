@@ -11,7 +11,7 @@ type Client struct {
 	conn net.Conn
 }
 
-func NewClient(conn net.Conn) *Client {
+func NewClient(conn net.Conn) *Client {   // 并发读写会乱序.......
 	return &Client{conn}
 }
 func (t *Client) Close() {
@@ -24,6 +24,7 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 	container := reflect.ValueOf(funcPointer).Elem()
 
 	f := func(req []reflect.Value) []reflect.Value {
+		log.Println("rpc-client-Call-----in")
 		clientTransport := NewCustomAgreement(t.conn)
 
 		handleError := func(err error) []reflect.Value {
@@ -43,6 +44,8 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			//fArgs[i] = req[i].Interface()   ???
 		}
 
+		log.Println("rpc-client-Call-----ready------")
+
 		// send
 		err := clientTransport.Send(ProtoData{
 			Name: name,
@@ -53,14 +56,21 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			return handleError(err)
 		}
 
+		log.Println("rpc-client-Call-----send-done!")
 		// recieve
 		rsp, err := clientTransport.Receive()
+
+		log.Println("rpc-client-Call-----Receive-done!")
+
 		if err != nil {
 			return handleError(err)
 		}
 		if rsp.Err != "" {
 			return handleError(errors.New(rsp.Err))
 		}
+
+		log.Println("rpc-client-Call-----send-done!")
+
 		log.Println("------client-------data---------check")
 		log.Println("send Args = ", fArgs)
 		log.Println("Receive data = ", rsp.Args)
