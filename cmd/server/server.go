@@ -9,10 +9,10 @@ import (
 )
 
 func init() {
+	yhylog.LogInit("server_log.log")
 	config.BaseConfInit()
 	dal.CacherInit()
 	dal.DbInit()
-	yhylog.LogInit("server_log.log")
 }
 
 func main() {

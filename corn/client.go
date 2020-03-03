@@ -87,8 +87,6 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			return handleError(errors.New(rsp.Err))
 		}
 
-		log.Println("rpc-client-Call-----send-done!------reqArgs=", fArgs)
-
 		log.Println("------client-------data---------check")
 		log.Println("send Args = ", fArgs)
 		log.Println("Receive data = ", rsp.Args)

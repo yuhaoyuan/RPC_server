@@ -73,7 +73,7 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 	header := make([]byte, 4)
 	_, err := io.ReadFull(t.conn, header) // read精准的长度, 为什么此处会阻塞住等候数据?
 
-	log.Println("RRRReceive----fromo----other----read header done!, conn=", t.conn.RemoteAddr())
+	log.Println("RRRReceive----fromo----other----read header done!, header=", header)
 	if err != nil {
 		log.Println("receive error=", err)
 		return ProtoData{}, err
