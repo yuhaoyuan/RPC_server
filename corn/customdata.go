@@ -79,10 +79,5 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 		return ProtoData{}, err
 	}
 	rsp, err := decode(data)
-
-	log.Printf("\n\n receive------rsp----------")
-	log.Println(rsp)
-	log.Printf("--------------")
-
 	return rsp, err
 }

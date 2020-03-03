@@ -46,6 +46,7 @@ func (t *Server) Run() {
 		go func() {
 			transporter := NewCustomAgreement(conn)
 			for {
+				log.Println("\n\n\n\n\n\n 收到客户端请求，服务端处理起点！ sever-conn-LocalAddr=", conn.LocalAddr(), " remote addr =",conn.RemoteAddr()) // 打点证明conn没有断
 				req, err := transporter.Receive()   // 当客户端建立连接后send的时候，这边接收其请求
 				if err != nil {
 					if err != io.EOF {
@@ -53,7 +54,7 @@ func (t *Server) Run() {
 						return
 					}
 				}
-				log.Printf("rpc-api-called, name=%s", req.Name)   // 当客户端的请求过来时，打点日志
+				log.Println("rpc-api-Receive , req=", req)   // 当客户端的请求过来时，打点日志
 				// 获得client调用的方法
 				f, ok := t.fMap[req.Name]
 				if !ok {

@@ -51,12 +51,12 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		// package
 		fArgs := make([]interface{}, 0, len(req))
 		for i := range req {
-
 			fArgs = append(fArgs, req[i].Interface())
 			//fArgs[i] = req[i].Interface()   ???
 		}
 
 		log.Println("rpc-client-Call-----ready------reqArgs=", fArgs)
+		log.Println("now-----conn -LocalAddr= ", t.conn.LocalAddr(), "remote-addr = ", t.conn.RemoteAddr())  // 每一个请求发出去之前，打点看一下conn是否已经没了
 
 		// send
 		err := clientTransport.Send(ProtoData{
@@ -65,6 +65,7 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		})
 		if err != nil {
 			// 处理err
+			log.Println("rpc-client-Call-----send-errorrrrrrrrrr!------err=", err)   // 不相信handle
 			return handleError(err)
 		}
 

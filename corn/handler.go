@@ -14,6 +14,7 @@ func findUserByUserName(userName string) (dal.UserInfo, error) {
 	log.Println("findUserByUserName---in")
 	userInfo, err := dal.CacherGetUserInfo(userName, dal.RedisDb)
 	if err != nil {
+		log.Println("CacherGetUserInfo - error , err = ", err)
 		return userInfo, err
 	}
 	log.Println("findUserByUserName---cacher-get-user=", userInfo)
@@ -21,13 +22,14 @@ func findUserByUserName(userName string) (dal.UserInfo, error) {
 	if userInfo.Name == "" {
 		userInfo, err = dal.DbGetUserInfoByName(userName, dal.SqlDb)
 		if err != nil {
+			log.Println("findUserByUserName-DbGetUserInfoByName error = ", err)
 			return userInfo, err
 		}
 		if userInfo.Name != ""{
 			_ = dal.CacherSetUserInfo(userInfo, dal.RedisDb)
 		}
+		log.Println("findUserByUserName--sql-get-user=", userInfo)
 	}
-	log.Println("findUserByUserName--sql-get-user=", userInfo)
 	return userInfo, nil
 }
 
