@@ -2,6 +2,7 @@ package corn
 
 import (
 	"errors"
+	"io"
 	"log"
 	"net"
 	"reflect"
@@ -20,15 +21,19 @@ func (t *Client) Close() {
 		_ = t.conn.Close()
 	}
 }
-func (t *Client) IsClose() bool {
+func (t *Client) CheckConn() {
 	_ = t.conn.SetReadDeadline(time.Now())
 	var one = []byte{}
 	_, err := t.conn.Read(one)
 	if err != nil {
-		_ = t.conn.Close()
-		return true
+		log.Println("Net err: ", err)
 	}
-	return false
+	if err == io.EOF {
+		return
+	}
+	var zero time.Time
+	_ = t.conn.SetReadDeadline(zero)
+	return
 }
 
 func (t *Client) Call(name string, funcPointer interface{}) {

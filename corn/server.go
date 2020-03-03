@@ -43,7 +43,11 @@ func (t *Server) Run() {
 		当rpcClient建立tcp连接之后，
 		每一个下游客户端请求连接都会开一个goroutine 去执行， 显然这里是rpc服务器的瓶颈之一。
 		*/
-		go func() {
+		goroutineFlag := 1
+		go func(aliveFlag int) {
+			defer func(x int){
+				x-=1
+			}(aliveFlag)
 			transporter := NewCustomAgreement(conn)
 			for {
 				log.Println("\n\n\n\n\n\n 收到客户端请求，服务端处理起点！ sever-conn-LocalAddr=", conn.LocalAddr(), " remote addr =",conn.RemoteAddr()) // 打点证明conn没有断
@@ -108,7 +112,8 @@ func (t *Server) Run() {
 					log.Println(fmt.Sprintf("transporter---Send failed, err = %s", err))
 				}
 			}
-		}()
+		}(goroutineFlag)
+		log.Println("go routine alive flag = ", goroutineFlag)
 	}
 
 }
