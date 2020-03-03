@@ -49,6 +49,7 @@ func NewCustomAgreement(conn net.Conn) *CustomAgreement {
 }
 
 func (t *CustomAgreement) Send(req ProtoData) error {
+	log.Println("SSSSSend-----to----other,req=", req)
 	b, err := encode(req)
 	if err != nil {
 		log.Println("Send-encode error=", err)
@@ -58,6 +59,7 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
 	copy(buf[4:], b)                                      // set body
 	_, err = t.conn.Write(buf)      // 这个并发写操作看起来并不安全呢    那意味着客户端并发需要控制
+	log.Println("SSSSSend-----to----other---------Done!!!!!,req=", req, "conn = ", t.conn)
 	if err != nil {
 		log.Println("Send-Write error=", err)
 	}
@@ -65,15 +67,19 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 }
 
 func (t *CustomAgreement) Receive() (ProtoData, error) {
+	log.Println("RRRReceive----fromo----other,conn=", t.conn)
 	header := make([]byte, 4)
-	_, err := io.ReadFull(t.conn, header) // read精准的长度, 而且此处会阻塞住等候数据
+	_, err := io.ReadFull(t.conn, header) // read精准的长度, 为什么此处会阻塞住等候数据?
+
+	log.Println("RRRReceive----fromo----other----read header done!, conn=", t.conn)
 	if err != nil {
 		log.Println("receive error=", err)
 		return ProtoData{}, err
 	}
 	dataLen := binary.BigEndian.Uint32(header)
 	data := make([]byte, dataLen)
-	_, err = io.ReadFull(t.conn, data)  // 这个地方并发安全？
+	_, err = io.ReadFull(t.conn, data)  // 应控制并发读
+	log.Println("RRRReceive----fromo----other----read data done!, conn=", t.conn)
 	if err != nil {
 		log.Println("receive error=", err)
 		return ProtoData{}, err

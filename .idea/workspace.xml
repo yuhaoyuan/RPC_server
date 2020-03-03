@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c628c168-95ad-42cd-a67e-74724faca83f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/corn/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corn/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corn/customdata.go" beforeDir="false" afterPath="$PROJECT_DIR$/corn/customdata.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/server_log.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,10 +14,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/corn/client.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/corn/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="49" />
+            <state relative-caret-position="532">
+              <caret line="100" column="36" lean-forward="true" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -27,25 +35,25 @@
         <entry file="file:///usr/local/go/src/net/net.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
-              <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corn/client.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+              <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file:///usr/local/go/src/crypto/tls/conn.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="106" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server_log.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="3297" column="65" lean-forward="true" selection-start-line="3297" selection-start-column="65" selection-end-line="3297" selection-end-column="65" />
+            <state relative-caret-position="363">
+              <caret line="3630" column="143" lean-forward="true" selection-start-line="3630" selection-start-column="143" selection-end-line="3630" selection-end-column="143" />
             </state>
           </provider>
         </entry>
@@ -53,26 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/corn/handler.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dal/cacher.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/go/pkg/mod/github.com/go-redis/redis@v6.15.7+incompatible/options.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="384">
+              <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -98,8 +88,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/corn/customdata.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+            <state relative-caret-position="277">
+              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/go/src/io/io.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="327" column="5" selection-start-line="327" selection-start-column="5" selection-end-line="327" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -115,14 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>receive error</find>
-      <find>send</find>
-      <find>Send-Write</find>
-      <find>Send-Write error</find>
-      <find>send-</find>
-      <find>container</find>
-      <find>but req-args</find>
-      <find>Send-encode</find>
       <find>eceive------rsp-</find>
       <find>now conCount =</find>
       <find>client</find>
@@ -139,12 +130,20 @@
       <find>rpc-api-called, name=CheckToken</find>
       <find>rpc-api-called, name</find>
       <find>receive------rsp----------</find>
-      <find>send</find>
       <find>findUserByUserName---in</find>
       <find>qCIcYPPPhh</find>
       <find>QplPtddobe</find>
       <find>sever-conn-LocalAddr</find>
+      <find>handleError</find>
+      <find>GetUserInfoByToken</find>
+      <find>GetUserInfoByToken out</find>
+      <find>iGdBqqGhLk</find>
+      <find>---------transporter.Send----rsp----to----client-----done!</find>
+      <find>--------transporter.Send----rsp----to----client-----done!</find>
+      <find>DfICQQerkO</find>
       <find>conn</find>
+      <find>clientTransport</find>
+      <find>send</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -185,11 +184,11 @@
         <option value="$PROJECT_DIR$/server_log" />
         <option value="$PROJECT_DIR$/cmd/server/server.go" />
         <option value="$PROJECT_DIR$/proto/request.go" />
-        <option value="$PROJECT_DIR$/corn/customdata.go" />
-        <option value="$PROJECT_DIR$/corn/client.go" />
         <option value="$PROJECT_DIR$/corn/handler.go" />
+        <option value="$PROJECT_DIR$/corn/client.go" />
         <option value="$PROJECT_DIR$/corn/server.go" />
         <option value="$PROJECT_DIR$/server_log.log" />
+        <option value="$PROJECT_DIR$/corn/customdata.go" />
       </list>
     </option>
   </component>
@@ -482,7 +481,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32929516" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3270925" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3270925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39867842" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -690,13 +689,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/go/pkg/mod/github.com/go-sql-driver/mysql@v1.5.0/driver_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="1036" column="24" selection-start-line="1036" selection-start-column="24" selection-end-line="1036" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/image/png/reader.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -901,13 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/go/src/io/io.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="328" column="16" selection-start-line="328" selection-start-column="16" selection-end-line="328" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/builtin/builtin.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -985,27 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/client/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/customdata.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/go/pkg/mod/github.com/go-redis/redis@v6.15.7+incompatible/options.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-38">
@@ -1016,28 +980,7 @@
     <entry file="file://$PROJECT_DIR$/dal/cacher.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go/src/net/net.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corn/handler.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1048,10 +991,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/client/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server_log.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="3297" column="65" lean-forward="true" selection-start-line="3297" selection-start-column="65" selection-end-line="3297" selection-end-column="65" />
+        <state relative-caret-position="363">
+          <caret line="3630" column="143" lean-forward="true" selection-start-line="3630" selection-start-column="143" selection-end-line="3630" selection-end-column="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="100" column="36" lean-forward="true" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/io/io.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="327" column="5" selection-start-line="327" selection-start-column="5" selection-end-line="327" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corn/customdata.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/net/net.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/tls/conn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="106" selection-end-column="21" />
         </state>
       </provider>
     </entry>
