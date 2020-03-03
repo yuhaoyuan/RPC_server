@@ -51,6 +51,7 @@ func NewCustomAgreement(conn net.Conn) *CustomAgreement {
 func (t *CustomAgreement) Send(req ProtoData) error {
 	log.Println("SSSSSend-----to----other,req=", req)
 	b, err := encode(req)
+	log.Println("SSSSSend-----encode----done ! ,b=", b)
 	if err != nil {
 		log.Println("Send-encode error=", err)
 		return err
@@ -58,6 +59,7 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 	buf := make([]byte, 4+len(b))
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
 	copy(buf[4:], b)                                      // set body
+	log.Println("SSSSSend-----copy----done! ,buf=", buf)
 	_, err = t.conn.Write(buf)      // 这个并发写操作看起来并不安全呢    那意味着客户端并发需要控制
 	log.Println("SSSSSend-----to----other---------Done!!!!!,req=", req, "conn = ", t.conn.RemoteAddr())
 	if err != nil {
@@ -79,7 +81,7 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 	dataLen := binary.BigEndian.Uint32(header)
 	data := make([]byte, dataLen)
 	_, err = io.ReadFull(t.conn, data)  // 应控制并发读
-	log.Println("RRRReceive----fromo----other----read data done!, conn=", t.conn.RemoteAddr())
+	log.Println("RRRReceive----fromo----other----read data done!, data=", data)
 	if err != nil {
 		log.Println("receive error=", err)
 		return ProtoData{}, err
