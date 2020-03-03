@@ -1,6 +1,7 @@
 package corn
 
 import (
+	"errors"
 	"log"
 	"net"
 	"reflect"
@@ -35,9 +36,11 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		}
 
 		// package
-		fArgs := make([]interface{}, len(req))
+		fArgs := make([]interface{}, 0, len(req))
 		for i := range req {
-			fArgs[i] = req[i].Interface()
+
+			fArgs = append(fArgs, req[i].Interface())
+			//fArgs[i] = req[i].Interface()   ???
 		}
 
 		// send
@@ -56,16 +59,18 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			return handleError(err)
 		}
 		if rsp.Err != "" {
-			return handleError(err)
+			return handleError(errors.New(rsp.Err))
 		}
 		log.Println("------client-------data---------check")
 		log.Println("send Args = ", fArgs)
 		log.Println("Receive data = ", rsp.Args)
 		log.Println("------client-------data---------check------end")
 
+		// 如果不做特殊处理的话.....
+		if len(rsp.Args) == 0 {
+			rsp.Args = make([]interface{}, container.Type().NumOut())
+		}
 
-		// if rsp.Args == []
-		// handle rsp-Args
 		argsCount := container.Type().NumOut()
 		formatArgs := make([]reflect.Value, argsCount)
 		for i := 0; i < argsCount-1; i++ {

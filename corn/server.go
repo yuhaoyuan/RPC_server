@@ -30,7 +30,7 @@ func (t *Server) Run() {
 	}
 	connCount := 0
 	for {
-		conn, err2 := ls.Accept() //会等待下一个呼叫，并返回一个该呼叫的Conn接口。
+		conn, err2 := ls.Accept() //会等待下一个呼叫，并返回一个该呼叫的Conn接口。 这里我好奇断开的连接怎么办呢？
 
 		if err2 != nil {
 			log.Printf("accept failed!")
