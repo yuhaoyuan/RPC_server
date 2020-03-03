@@ -58,7 +58,9 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
 	copy(buf[4:], b)                                      // set body
 	_, err = t.conn.Write(buf)
-	log.Println("Send-Write error=", err)
+	if err != nil {
+		log.Println("Send-Write error=", err)
+	}
 	return err
 }
 
@@ -71,16 +73,16 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 	}
 	dataLen := binary.BigEndian.Uint32(header)
 	data := make([]byte, dataLen)
-	_, err = io.ReadFull(t.conn, data)
+	_, err = io.ReadFull(t.conn, data)  // 这个地方并发安全？
 	if err != nil {
 		log.Println("receive error=", err)
 		return ProtoData{}, err
 	}
 	rsp, err := decode(data)
 
-	log.Printf("receive------rsp----------")
+	log.Printf("\n\n receive------rsp----------")
 	log.Println(rsp)
-	log.Printf("--------------\n\n")
+	log.Printf("--------------")
 
 	return rsp, err
 }

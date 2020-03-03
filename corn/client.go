@@ -1,6 +1,7 @@
 package corn
 
 import (
+	"log"
 	"net"
 	"reflect"
 )
@@ -57,6 +58,11 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		if rsp.Err != "" {
 			return handleError(err)
 		}
+		log.Println("------client-------data---------check")
+		log.Println("send Args = ", fArgs)
+		log.Println("Receive data = ", rsp.Args)
+		log.Println("------client-------data---------check------end")
+
 
 		// if rsp.Args == []
 		// handle rsp-Args

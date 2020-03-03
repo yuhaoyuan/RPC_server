@@ -28,13 +28,18 @@ func (t *Server) Run() {
 		log.Printf("listen failed!")
 		return
 	}
+	connCount := 0
 	for {
 		conn, err2 := ls.Accept() //会等待下一个呼叫，并返回一个该呼叫的Conn接口。
+
 		if err2 != nil {
 			log.Printf("accept failed!")
 			continue
 		}
-		go func() {   //  goroutine的数量 等于 同时在处理的请求数量 约等于 并发量
+		// 在这里监控当前的连接数量
+		connCount ++
+		log.Println("now conCount = ", connCount)
+		go func() {   //  goroutine的数量 等于 长连接的数量，每一个长链接
 			transporter := NewCustomAgreement(conn)
 			for {
 				req, err := transporter.Receive()
