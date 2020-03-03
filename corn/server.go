@@ -39,16 +39,21 @@ func (t *Server) Run() {
 		// 在这里监控当前的连接数量
 		connCount ++
 		log.Println("now conCount = ", connCount)
-		go func() {   //  goroutine的数量 等于 长连接的数量，每一个长链接
+		/*
+		当rpcClient建立tcp连接之后，
+		每一个下游客户端请求连接都会开一个goroutine 去执行， 显然这里是rpc服务器的瓶颈之一。
+		*/
+		go func() {
 			transporter := NewCustomAgreement(conn)
 			for {
-				req, err := transporter.Receive()
+				req, err := transporter.Receive()   // 当客户端建立连接后send的时候，这边接收其请求
 				if err != nil {
 					if err != io.EOF {
 						log.Printf(fmt.Sprintf("Receive failed! err=%s", err))
 						return
 					}
 				}
+				log.Printf("rpc-api-called, name=%s", req.Name)   // 当客户端的请求过来时，打点日志
 				// 获得client调用的方法
 				f, ok := t.fMap[req.Name]
 				if !ok {
@@ -64,7 +69,6 @@ func (t *Server) Run() {
 					}
 					continue
 				}
-				log.Printf("rpc-api-called, name=%s", req.Name)   // 输出日志，接口名字
 
 				// 获得函数需要的参数
 				fArgs := make([]reflect.Value, len(req.Args))
@@ -93,11 +97,12 @@ func (t *Server) Run() {
 				log.Println("----------------------")
 
 				// send rsp to client
-				err = transporter.Send(ProtoData{
+				err = transporter.Send(ProtoData{     // 处理完成，将数据发送给客户端
 					Name: req.Name,
 					Args: RspInfo,
 					Err: RspErr,
 				})
+				log.Println("---------transporter.Send----rsp----to----client-----done!")
 				if err != nil {
 					log.Println(fmt.Sprintf("transporter---Send failed, err = %s", err))
 				}

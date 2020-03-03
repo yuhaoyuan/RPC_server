@@ -57,7 +57,7 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 	buf := make([]byte, 4+len(b))
 	binary.BigEndian.PutUint32(buf[:4], uint32(len(b))) // set header  默认使用大端序
 	copy(buf[4:], b)                                      // set body
-	_, err = t.conn.Write(buf)      // 这个并发写操作是否安全呢？？？？ 不安全的话意味着客户端同时处理一个请求
+	_, err = t.conn.Write(buf)      // 这个并发写操作看起来并不安全呢    那意味着客户端并发需要控制
 	if err != nil {
 		log.Println("Send-Write error=", err)
 	}
@@ -66,7 +66,7 @@ func (t *CustomAgreement) Send(req ProtoData) error {
 
 func (t *CustomAgreement) Receive() (ProtoData, error) {
 	header := make([]byte, 4)
-	_, err := io.ReadFull(t.conn, header) // read精准的长度
+	_, err := io.ReadFull(t.conn, header) // read精准的长度, 而且此处会阻塞住等候数据
 	if err != nil {
 		log.Println("receive error=", err)
 		return ProtoData{}, err

@@ -5,6 +5,7 @@ import (
 	"log"
 	"net"
 	"reflect"
+	"time"
 )
 
 type Client struct {
@@ -19,6 +20,16 @@ func (t *Client) Close() {
 		_ = t.conn.Close()
 	}
 }
+func (t *Client) IsClose() bool {
+	_ = t.conn.SetReadDeadline(time.Now())
+	var one = []byte{}
+	_, err := t.conn.Read(one)
+	if err != nil {
+		_ = t.conn.Close()
+		return true
+	}
+	return false
+}
 
 func (t *Client) Call(name string, funcPointer interface{}) {
 	container := reflect.ValueOf(funcPointer).Elem()
@@ -28,6 +39,7 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		clientTransport := NewCustomAgreement(t.conn)
 
 		handleError := func(err error) []reflect.Value {
+			log.Println("Call-------handleError-------err=", err)
 			outArgs := make([]reflect.Value, container.Type().NumOut())
 			for i := 0; i < len(outArgs)-1; i++ {
 				outArgs[i] = reflect.Zero(container.Type().Out(i))
@@ -44,7 +56,7 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			//fArgs[i] = req[i].Interface()   ???
 		}
 
-		log.Println("rpc-client-Call-----ready------")
+		log.Println("rpc-client-Call-----ready------reqArgs=", fArgs)
 
 		// send
 		err := clientTransport.Send(ProtoData{
@@ -56,11 +68,11 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			return handleError(err)
 		}
 
-		log.Println("rpc-client-Call-----send-done!")
+		log.Println("rpc-client-Call-----send-done!------reqArgs=", fArgs)
 		// recieve
 		rsp, err := clientTransport.Receive()
 
-		log.Println("rpc-client-Call-----Receive-done!")
+		log.Println("rpc-client-Call-----Receive-done!------reqArgs=", fArgs)
 
 		if err != nil {
 			return handleError(err)
@@ -69,7 +81,7 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 			return handleError(errors.New(rsp.Err))
 		}
 
-		log.Println("rpc-client-Call-----send-done!")
+		log.Println("rpc-client-Call-----send-done!------reqArgs=", fArgs)
 
 		log.Println("------client-------data---------check")
 		log.Println("send Args = ", fArgs)

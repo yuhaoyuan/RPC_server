@@ -11,10 +11,12 @@ import (
 // get userinfo by name
 func findUserByUserName(userName string) (dal.UserInfo, error) {
 	// 先检查redis里面是否存在此用户
+	log.Println("findUserByUserName---in")
 	userInfo, err := dal.CacherGetUserInfo(userName, dal.RedisDb)
 	if err != nil {
 		return userInfo, err
 	}
+	log.Println("findUserByUserName---cacher-get-user=", userInfo)
 	// 从sql中搜索
 	if userInfo.Name == "" {
 		userInfo, err = dal.DbGetUserInfoByName(userName, dal.SqlDb)
@@ -25,6 +27,7 @@ func findUserByUserName(userName string) (dal.UserInfo, error) {
 			_ = dal.CacherSetUserInfo(userInfo, dal.RedisDb)
 		}
 	}
+	log.Println("findUserByUserName--sql-get-user=", userInfo)
 	return userInfo, nil
 }
 
