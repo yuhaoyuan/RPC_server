@@ -2,7 +2,6 @@ package corn
 
 import (
 	"errors"
-	"github.com/yuhaoyuan/RPC_server/config"
 	"io"
 	"log"
 	"net"
@@ -27,21 +26,16 @@ func (t *Client) Close() {
 }
 
 // CheckConn 检查连接是否有问题，如果有问题则重新创建连接。
-func (t *Client) CheckConn() {
+func (t *Client) CheckConn() bool {
 	var one = []byte{}
 	_, err := t.conn.Read(one)
 	if err == io.EOF {
-		return
+		return true
 	}
 	if err != nil {
-		log.Println("Net err: ", err)
-		d := net.Dialer{}
-		t.conn, err = d.Dial("tcp", config.BaseConf.Addr)
-		if err != nil {
-			log.Println("client-dial failed!, err ", err)
-		}
-		log.Println("make RpcClient-conn")
+		return false
 	}
+	return true
 }
 
 // Call 客户端发送请求的逻辑
