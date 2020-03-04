@@ -8,11 +8,11 @@ import (
 	"time"
 )
 
-func LogInit(fileName string){
+// LogInit 初始化log
+func LogInit(fileName string) {
 	logFileName := flag.String("log", fileName, fileName)
 
 	logFile, logErr := os.OpenFile(*logFileName, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
-
 
 	if logErr != nil {
 		fmt.Println("Fail to find", *logFile, "cServer start Failed")

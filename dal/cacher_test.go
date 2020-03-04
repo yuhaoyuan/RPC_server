@@ -1,10 +1,8 @@
 package dal
 
 import (
-	"fmt"
 	"github.com/go-redis/redis"
 	"testing"
-	"time"
 )
 
 func TestCacher(t *testing.T) {
@@ -17,12 +15,23 @@ func TestCacher(t *testing.T) {
 
 	_, err := redisDb.Ping().Result()
 	if err != nil {
-		fmt.Println(err)
+		t.Errorf("err = %v want nil", err)
 	}
 
-	err = redisDb.Set("ttttestcacher", 1, time.Minute).Err()
+	userInfo := UserInfo{
+		Name: "testaabbcc",
+		Pwd:  "testpwd",
+	}
+
+	err = CacherSetUserInfo(userInfo, redisDb)
 	if err != nil {
-		fmt.Println(err)
-		panic(err)
+		t.Errorf("err = %v want nil", err)
+	}
+	rsp, err := CacherGetUserInfo(userInfo.Name, redisDb)
+	if err != nil {
+		t.Errorf("err = %v want nil", err)
+	}
+	if rsp.Name != userInfo.Name {
+		t.Errorf("rsp.Name should = userInfo.Name")
 	}
 }

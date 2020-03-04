@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/gob"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/yuhaoyuan/RPC_server/config"
 	"github.com/yuhaoyuan/RPC_server/corn"
 	"github.com/yuhaoyuan/RPC_server/dal"
@@ -25,7 +26,7 @@ func main() {
 	srv.Register("CheckToken", corn.GetUserInfoByToken)
 	go srv.Run()
 
-	for i:=0; i<10; i++{
+	for i := 0; i < 10; i++ {
 		i--
 	}
 }

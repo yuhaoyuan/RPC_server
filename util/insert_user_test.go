@@ -49,13 +49,11 @@ func TestInserUserInfo(t *testing.T){
 		pwd := "testpwd"
 		picture := "http://q6gy4v9f7.bkt.clouddn.com/usertestc_1583059444997873000.jpg"
 
-		inserSql := fmt.Sprintf("insert into user_info set user_name='%s', pwd='%s', nick_name='', picture='%s'", userName, pwd, picture)
-		_, err := dal.SqlDb.Exec(inserSql)
+		inserSQL := fmt.Sprintf("insert into user_info set user_name='%s', pwd='%s', nick_name='', picture='%s'", userName, pwd, picture)
+		_, err := dal.SQLDB.Exec(inserSQL)
 		if err != nil {
 			log.Println("DbInsertUserInfo, inserSql-error, err = ", err)
 		}
 	}
-
-
 
 }

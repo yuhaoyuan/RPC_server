@@ -17,13 +17,14 @@ const (
 	userLastTokenKey = "user_last_token_key_%s"
 )
 
-// 判断userName 和 token 是否一一对应
-func CacherJudUserToken(token string, db *redis.Client) string {
+// CacherGetUserNameByToken 从redis中获得user name
+func CacherGetUserNameByToken(token string, db *redis.Client) string {
 	rKey := fmt.Sprintf(userTokenKey, token)
 	userName := db.Get(rKey).Val()
 	return userName
 }
 
+// CacherGetToken 从redis中获得token
 func CacherGetToken(userName string, db *redis.Client) string {
 	// 先检查是否存有半小时内最近一次的token
 	lastKey := fmt.Sprintf(userLastTokenKey, userName)
@@ -46,18 +47,21 @@ func CacherGetToken(userName string, db *redis.Client) string {
 	return string(orginData)
 }
 
+// PKCS7Padding 加密前填充数据
 func PKCS7Padding(ciphertext []byte, blockSize int) []byte {
 	padding := blockSize - len(ciphertext)%blockSize
 	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
 	return append(ciphertext, padtext...)
 }
 
+// PKCS7UnPadding 解密前处理数据
 func PKCS7UnPadding(origData []byte) []byte {
 	length := len(origData)
 	unpadding := int(origData[length-1])
 	return origData[:(length - unpadding)]
 }
 
+// AesEncrypt 将token加密
 func AesEncrypt(origData, key []byte) ([]byte, error) {
 	block, err := aes.NewCipher(key)
 	if err != nil {
@@ -71,6 +75,7 @@ func AesEncrypt(origData, key []byte) ([]byte, error) {
 	return []byte(hex.EncodeToString(crypted)), nil
 }
 
+// AesDecrypt 解密
 func AesDecrypt(crypted, key []byte) ([]byte, error) {
 	block, err := aes.NewCipher(key)
 	if err != nil {

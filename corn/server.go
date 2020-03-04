@@ -8,6 +8,7 @@ import (
 	"reflect"
 )
 
+// Server 端
 type Server struct {
 	addr string
 	fMap map[string]reflect.Value
@@ -22,6 +23,7 @@ func (t *Server) Register(name string, f interface{}) {
 	t.fMap[name] = reflect.ValueOf(f)
 }
 
+// Run Server
 func (t *Server) Run() {
 	ls, err := net.Listen("tcp", t.addr)
 	if err != nil {
@@ -37,31 +39,31 @@ func (t *Server) Run() {
 			continue
 		}
 		// 在这里监控当前的连接数量
-		connCount ++
+		connCount++
 		log.Println("now conCount = ", connCount)
 		/*
-		当rpcClient建立tcp连接之后，
-		每一个下游客户端请求连接都会开一个goroutine 去执行， 显然这里是rpc服务器的瓶颈之一。
+			当rpcClient建立tcp连接之后，
+			每一个下游客户端请求连接都会开一个goroutine 去执行请求
 		*/
 		go func() {
-			defer func(){
-				log.Println("go routine done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-				if err:=recover();err!=nil{
+			defer func() {
+				log.Println("go routine done!")
+				if err := recover(); err != nil {
 					log.Println("goroutine error = ", err)
 				}
-				log.Println("go routine defer done...........................")
+				log.Println("go routine defer done.")
 			}()
 			transporter := NewCustomAgreement(conn)
 			for {
-				log.Println("\n\n\n\n\n\n 收到客户端请求，服务端处理起点！ sever-conn-LocalAddr=", conn.LocalAddr(), " remote addr =",conn.RemoteAddr()) // 打点证明conn没有断
-				req, err := transporter.Receive()   // 当客户端建立连接后send的时候，这边接收其请求
+				log.Println("\n\n收到客户端请求，服务端处理起点") // 打点证明conn没有断
+				req, err := transporter.Receive()  // 当客户端建立连接后send的时候，这边接收其请求
 				if err != nil {
 					if err != io.EOF {
 						log.Printf(fmt.Sprintf("Receive failed! err=%s", err))
 						return
 					}
 				}
-				log.Println("rpc-api-Receive , req=", req)   // 当客户端的请求过来时，打点日志
+				log.Println("rpc-api-Receive , req=", req) // 当客户端的请求过来时，打点日志
 				// 获得client调用的方法
 				f, ok := t.fMap[req.Name]
 				if !ok {
@@ -105,12 +107,11 @@ func (t *Server) Run() {
 				log.Println("----------------------")
 
 				// send rsp to client
-				err = transporter.Send(ProtoData{     // 处理完成，将数据发送给客户端
+				err = transporter.Send(ProtoData{ // 处理完成，将数据发送给客户端
 					Name: req.Name,
 					Args: RspInfo,
-					Err: RspErr,
+					Err:  RspErr,
 				})
-				log.Println("---------transporter.Send----rsp----to----client-----done!")
 				if err != nil {
 					log.Println(fmt.Sprintf("transporter---Send failed, err = %s", err))
 				}
@@ -120,6 +121,7 @@ func (t *Server) Run() {
 
 }
 
+// NewServer create a server
 func NewServer(addr string) *Server {
 	return &Server{addr, make(map[string]reflect.Value)}
 }

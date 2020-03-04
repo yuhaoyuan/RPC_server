@@ -1,5 +1,6 @@
 package dal
 
+// UserInfo 统一格式
 type UserInfo struct {
 	Name     string `json:"name"`
 	Pwd      string `json:"pwd"`
