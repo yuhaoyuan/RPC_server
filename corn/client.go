@@ -18,13 +18,6 @@ func NewClient(conn net.Conn) *Client { // 并发读写会乱序.......
 	return &Client{conn}
 }
 
-// Close 关闭
-func (t *Client) Close() {
-	if t.conn != nil {
-		_ = t.conn.Close()
-	}
-}
-
 // CheckConn 检查连接是否有问题，如果有问题则重新创建连接。
 func (t *Client) CheckConn() bool {
 	var one = []byte{}
