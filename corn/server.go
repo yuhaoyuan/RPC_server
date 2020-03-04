@@ -6,6 +6,7 @@ import (
 	"log"
 	"net"
 	"reflect"
+	"runtime/debug"
 )
 
 // Server 端
@@ -50,6 +51,7 @@ func (t *Server) Run() {
 				log.Println("go routine done!")
 				if err := recover(); err != nil {
 					log.Println("goroutine error = ", err)
+					log.Println("stack-info = ", string(debug.Stack()))
 				}
 				log.Println("go routine defer done.")
 			}()

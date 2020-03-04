@@ -12,13 +12,9 @@ var SQLDB *sql.DB
 
 // DbInit init.
 func DbInit() {
-	SQLDB, err := sql.Open("mysql",
+	SQLDB, _ = sql.Open("mysql",
 		fmt.Sprintf("%s:%s@tcp(%s)/%s", config.BaseConf.DbUser, config.BaseConf.DbPwd, config.BaseConf.DbAddr, config.BaseConf.DbDatabase))
-	if err != nil {
-		log.Println("sql-db Open error, err = ", err)
-		panic(err)
-	}
-	err = SQLDB.Ping()
+	err := SQLDB.Ping()
 	if err != nil {
 		log.Println("sql-db ping error, err = ", err)
 	}

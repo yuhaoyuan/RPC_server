@@ -7,7 +7,6 @@ import (
 	"log"
 	"net"
 	"reflect"
-	"time"
 )
 
 // Client 客户端
@@ -29,21 +28,20 @@ func (t *Client) Close() {
 
 // CheckConn 检查连接是否有问题，如果有问题则重新创建连接。
 func (t *Client) CheckConn() {
-	_ = t.conn.SetReadDeadline(time.Now())
 	var one = []byte{}
 	_, err := t.conn.Read(one)
-	if err != nil {
-		log.Println("Net err: ", err)
-	}
 	if err == io.EOF {
 		return
 	}
-	d := net.Dialer{}
-	t.conn, err = d.Dial("tcp", config.BaseConf.Addr)
 	if err != nil {
-		log.Println("client-dial failed!, err ", err)
+		log.Println("Net err: ", err)
+		d := net.Dialer{}
+		t.conn, err = d.Dial("tcp", config.BaseConf.Addr)
+		if err != nil {
+			log.Println("client-dial failed!, err ", err)
+		}
+		log.Println("make RpcClient-conn")
 	}
-	log.Println("make RpcClient-conn")
 }
 
 // Call 客户端发送请求的逻辑
