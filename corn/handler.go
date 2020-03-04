@@ -91,7 +91,7 @@ func UserModifyInfo(userName, pwd, nickName, picture string) (dal.UserInfo, erro
 	if err != nil {
 		return userInfo, err
 	}
-	// todo: 鉴权
+
 	err = dal.DbModifyUserInfo(userName, pwd, nickName, picture, dal.SQLDB)
 	if err != nil {
 		return userInfo, err
