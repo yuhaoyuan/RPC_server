@@ -26,13 +26,11 @@ func (t *Server) Register(name string, f interface{}) {
 
 // Run Server
 func (t *Server) Run() {
-	defer func() {  // 深度怀疑是Run挂了
-		log.Println("rpc-Server Run done!")
+	defer func() {
 		if err := recover(); err != nil {
 			log.Println("rpc-Server Run error = ", err)
 			log.Println("stack-info = ", string(debug.Stack()))
 		}
-		log.Println("rpc-Server Run defer done!")
 	}()
 	ls, err := net.Listen("tcp", t.addr)
 	if err != nil {
@@ -65,7 +63,7 @@ func (t *Server) Run() {
 			}()
 			transporter := NewCustomAgreement(conn)
 			for {
-				log.Println("\n\n收到客户端请求，服务端处理起点") // 打点证明conn没有断
+				//log.Println("\n\n收到客户端请求，服务端处理起点") // 打点证明conn没有断
 				req, err := transporter.Receive()  // 当客户端建立连接后send的时候，这边接收其请求
 				if err != nil {
 					if err != io.EOF {
@@ -73,7 +71,7 @@ func (t *Server) Run() {
 						return
 					}
 				}
-				log.Println("rpc-api-Receive , req=", req) // 当客户端的请求过来时，打点日志
+				//log.Println("rpc-api-Receive , req=", req) // 当客户端的请求过来时，打点日志
 				// 获得client调用的方法
 				f, ok := t.fMap[req.Name]
 				if !ok {
@@ -110,11 +108,11 @@ func (t *Server) Run() {
 				} else {
 					RspErr = rErr.Error()
 				}
-				log.Println("RspInfo= -----------------")
-				log.Println(RspInfo)
-				log.Println(RspErr)
-				log.Println("but req-args=", fArgs)
-				log.Println("----------------------")
+				//log.Println("RspInfo= -----------------")
+				//log.Println(RspInfo)
+				//log.Println(RspErr)
+				//log.Println("but req-args=", fArgs)
+				//log.Println("----------------------")
 
 				// send rsp to client
 				err = transporter.Send(ProtoData{ // 处理完成，将数据发送给客户端
