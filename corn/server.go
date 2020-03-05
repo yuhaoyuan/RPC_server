@@ -26,6 +26,14 @@ func (t *Server) Register(name string, f interface{}) {
 
 // Run Server
 func (t *Server) Run() {
+	defer func() {  // 深度怀疑是Run挂了
+		log.Println("rpc-Server Run done!")
+		if err := recover(); err != nil {
+			log.Println("rpc-Server Run error = ", err)
+			log.Println("stack-info = ", string(debug.Stack()))
+		}
+		log.Println("rpc-Server Run defer done!")
+	}()
 	ls, err := net.Listen("tcp", t.addr)
 	if err != nil {
 		log.Printf("listen failed!")

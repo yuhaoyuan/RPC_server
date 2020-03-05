@@ -30,9 +30,13 @@ func encode(data ProtoData) ([]byte, error) {
 // decode 消息反序列化
 func decode(bs []byte) (ProtoData, error) {
 	buf := bytes.NewBuffer(bs)
+	log.Println("RRRReceive-decode NewBuffer!, buf=", buf)
 	decoder := gob.NewDecoder(buf)
+	log.Println("RRRReceive-decode gob.NewDecoder!, buf=", buf)
 	var data ProtoData
 	err := decoder.Decode(&data) // 非指针的话-报错：err=gob: attempt to decode into a non-pointer
+
+	log.Println("RRRReceive-decode done! data = ", data)
 	if err != nil {
 		return ProtoData{}, err
 	}
@@ -83,7 +87,7 @@ func (t *CustomAgreement) Receive() (ProtoData, error) {
 	}
 	dataLen := binary.BigEndian.Uint32(header)
 	data := make([]byte, dataLen)
-	_, err = io.ReadFull(t.conn, data) // 应控制并发读
+	_, err = io.ReadFull(t.conn, data) // 客户端应控制并发读
 	log.Println("RRRReceive-read data, data=", data)
 	if err != nil {
 		log.Println("receive error=", err)

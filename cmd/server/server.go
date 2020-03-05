@@ -24,9 +24,9 @@ func main() {
 	srv.Register("userRegister", corn.UserRegister)
 	srv.Register("UserModifyInfo", corn.UserModifyInfo)
 	srv.Register("CheckToken", corn.GetUserInfoByToken)
-	go srv.Run()
-
-	for i := 0; i < 10; i++ {
-		i--
-	}
+	srv.Run()
+	//go srv.Run()
+	//for i := 0; i < 10; i++ {
+	//	i--
+	//}
 }
