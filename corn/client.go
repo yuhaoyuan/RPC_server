@@ -3,7 +3,6 @@ package corn
 import (
 	"errors"
 	"io"
-	"log"
 	"net"
 	"reflect"
 )
@@ -36,11 +35,11 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 	container := reflect.ValueOf(funcPointer).Elem()
 
 	f := func(req []reflect.Value) []reflect.Value {
-		log.Println("rpc-client-Call-----in")
+		//log.Println("rpc-client-Call-----in")
 		clientTransport := NewCustomAgreement(t.conn)
 
 		handleError := func(err error) []reflect.Value {
-			log.Println("Call-------handleError-------err=", err)
+			//log.Println("Call-------handleError-------err=", err)
 			outArgs := make([]reflect.Value, container.Type().NumOut())
 			for i := 0; i < len(outArgs)-1; i++ {
 				outArgs[i] = reflect.Zero(container.Type().Out(i))
@@ -53,7 +52,7 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		for i := range req {
 			fArgs = append(fArgs, req[i].Interface())
 		}
-		log.Println("rpc-client-Call-----ready------reqArgs=", fArgs)
+		//log.Println("rpc-client-Call-----ready------reqArgs=", fArgs)
 		// send
 		err := clientTransport.Send(ProtoData{
 			Name: name,
@@ -71,10 +70,10 @@ func (t *Client) Call(name string, funcPointer interface{}) {
 		if rsp.Err != "" {
 			return handleError(errors.New(rsp.Err))
 		}
-		log.Println("------client-------data---------check")
-		log.Println("send Args = ", fArgs)
-		log.Println("Receive data = ", rsp.Args)
-		log.Println("------client-------data---------check------end")
+		//log.Println("------client-------data---------check")
+		//log.Println("send Args = ", fArgs)
+		//log.Println("Receive data = ", rsp.Args)
+		//log.Println("------client-------data---------check------end")
 		if len(rsp.Args) == 0 {
 			rsp.Args = make([]interface{}, container.Type().NumOut())
 		}
