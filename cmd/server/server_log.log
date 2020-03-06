@@ -1,0 +1,14 @@
+2020/03/06 15:46:11 log.go:25: Rpc Server log ready!!!!!!!!!!!  time=2020-03-06 15:46:11.542408 +0800 CST m=+0.009826492
+2020/03/06 15:46:11 config.go:38: BaseConf =  {127.0.0.1:8009 127.0.0.1:6379 127.0.0.1:3306 root 12345678 yhy wem0Upqsl5MBD0Z3}
+2020/03/06 15:47:07 server.go:50: now conCount =  1
+2020/03/06 15:47:28 handler.go:56: user-register!
+2020/03/06 15:47:28 handler.go:29: findUserByUserName--sql-get-user= {    }
+2020/03/06 15:47:53 handler.go:85: user-modify!
+2020/03/06 15:47:54 handler.go:29: findUserByUserName--sql-get-user= {yuhaoyuan yuhaoyuan 于浩源😁 http://q6gy4v9f7.bkt.clouddn.com/yuhaoyuan_1583480872104137000.jpg }
+2020/03/06 15:49:33 customdata.go:85: receive error= EOF
+2020/03/06 15:49:33 server.go:80: the func  does not exist
+2020/03/06 15:49:33 customdata.go:85: receive error= read tcp 127.0.0.1:8009->127.0.0.1:56877: read: connection reset by peer
+2020/03/06 15:49:33 server.go:70: Receive failed! err=read tcp 127.0.0.1:8009->127.0.0.1:56877: read: connection reset by peer
+2020/03/06 15:49:33 server.go:57: go routine done!
+2020/03/06 15:49:33 server.go:62: go routine defer done.
+2020/03/06 15:50:11 server.go:50: now conCount =  2

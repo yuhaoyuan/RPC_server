@@ -11,13 +11,11 @@ import (
 // findUserByUserName get userinfo by name
 func findUserByUserName(userName string) (dal.UserInfo, error) {
 	// 先检查redis里面是否存在此用户
-	log.Println("findUserByUserName---in")
 	userInfo, err := dal.CacherGetUserInfo(userName, dal.RedisDb)
 	if err != nil {
 		log.Println("CacherGetUserInfo - error , err = ", err)
 		return userInfo, err
 	}
-	log.Println("findUserByUserName---cacher-get-user=", userInfo)
 	// 从sql中搜索
 	if userInfo.Name == "" {
 		userInfo, err = dal.DbGetUserInfoByName(userName, dal.SQLDB)
@@ -35,8 +33,6 @@ func findUserByUserName(userName string) (dal.UserInfo, error) {
 
 // UserLogin login
 func UserLogin(userName string, pwd string) (dal.UserInfo, error) {
-	log.Println("user-login-----")
-
 	userInfo, err := findUserByUserName(userName)
 	if err != nil {
 		return userInfo, err
@@ -109,7 +105,6 @@ func UserModifyInfo(userName, pwd, nickName, picture string) (dal.UserInfo, erro
 
 // GetUserInfoByToken 校验token
 func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
-	log.Printf("GetUserInfoByToken in, user_name=%s", userName)
 	// 插入一个管理员token逻辑
 	tokenUserName := ""
 	if token == "ckQSpDXWcJVTWfFidRkh" {
@@ -121,9 +116,8 @@ func GetUserInfoByToken(userName, token string) (dal.UserInfo, error) {
 	if tokenUserName != "" && tokenUserName == userName {
 		userInfo, _ := findUserByUserName(userName)
 		userInfo.Token = token
-		log.Printf("GetUserInfoByToken out, return=%s", userInfo.Name)
+		//log.Printf("GetUserInfoByToken out, return=%s", userInfo.Name)
 		return userInfo, nil
 	}
-	log.Println("can not find token or wrong user_name")
 	return dal.UserInfo{}, errors.New("can not find token or wrong user_name")
 }
