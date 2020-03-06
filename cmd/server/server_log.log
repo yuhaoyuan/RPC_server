@@ -12,3 +12,13 @@
 2020/03/06 15:49:33 server.go:57: go routine done!
 2020/03/06 15:49:33 server.go:62: go routine defer done.
 2020/03/06 15:50:11 server.go:50: now conCount =  2
+2020/03/06 21:46:05 customdata.go:85: receive error= EOF
+2020/03/06 21:46:05 server.go:80: the func  does not exist
+2020/03/06 21:46:05 customdata.go:85: receive error= EOF
+2020/03/06 21:46:05 server.go:80: the func  does not exist
+2020/03/06 21:46:05 customdata.go:72: Send-Write error= write tcp 127.0.0.1:8009->127.0.0.1:57131: write: broken pipe
+2020/03/06 21:46:05 server.go:86: transporter---Send failed!
+2020/03/06 21:46:05 customdata.go:85: receive error= read tcp 127.0.0.1:8009->127.0.0.1:57131: read: connection reset by peer
+2020/03/06 21:46:05 server.go:70: Receive failed! err=read tcp 127.0.0.1:8009->127.0.0.1:57131: read: connection reset by peer
+2020/03/06 21:46:05 server.go:57: go routine done!
+2020/03/06 21:46:05 server.go:62: go routine defer done.

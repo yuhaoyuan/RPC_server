@@ -26,7 +26,7 @@ func findUserByUserName(userName string) (dal.UserInfo, error) {
 		if userInfo.Name != "" {
 			_ = dal.CacherSetUserInfo(userInfo, dal.RedisDb)
 		}
-		log.Println("findUserByUserName--sql-get-user=", userInfo)
+		//log.Println("findUserByUserName--sql-get-user=", userInfo)
 	}
 	return userInfo, nil
 }
